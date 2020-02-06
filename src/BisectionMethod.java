@@ -17,7 +17,6 @@ public class BisectionMethod {
 	// f(x) for part b
 	static double function2(double x) {
 		return 3 * Math.pow(x, 4) + Math.pow(x, 2) - 2;
-//		return 3 * x - 3 * Math.pow(x, 2) + 2 * Math.exp(x) - 2;
 	}
 		
 	// f(x) for part d
@@ -69,6 +68,6 @@ public class BisectionMethod {
 	}
 	
 	public static void main(String[] args) {
-		bisection(-3,1);
+		bisection(-1,1);
 	}
 }

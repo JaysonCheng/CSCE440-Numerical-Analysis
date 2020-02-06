@@ -71,6 +71,6 @@ public class FIxedPointMethod {
 	}
 	
 	public static void main(String[] args) {
-		fixedPoint(2);
+		fixedPoint(1);
 	}
 }
