@@ -1,7 +1,7 @@
 // Name: Jayson Cheng
 // CSCE440 Assignment 1
 
-public class FIxedPointMethod {
+public class FixedPointMethod {
 
 	// error tolerance level
 	static final float tolerance = (float) 0.0001;

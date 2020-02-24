@@ -27,8 +27,8 @@ public class SecantMethod {
 	// secant method
 	static void secant(double p0, double p1) {
 		int i = 2;
-		double q0 = function2(p0);
-		double q1 = function2(p1);
+		double q0 = function1(p0);
+		double q1 = function1(p1);
 		double p ;
 
 		System.out.println("Secant Method : ");
@@ -53,7 +53,7 @@ public class SecantMethod {
 			p0 = p1;
 			q0 = q1;
 			p1 = p;
-			q1 = function2(p);
+			q1 = function1(p);
 		}
 		
 		// The method failed after 50 iterations
