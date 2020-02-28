@@ -4,7 +4,7 @@
 public class DividedDifferencesMethod {
 	
 	// Construct a recursive table by applying Newton Divided Difference Method
-	static double[][] dividedDiff(int[] x, int[] f, double point){
+	static double[][] dividedDiff(double[] x, double[] f, double point){
 		int n = x.length;
 		double[][] q = new double[n][n];
 
@@ -23,7 +23,7 @@ public class DividedDifferencesMethod {
 	}
 	
 	// Calculate the value of the interpolating polynomial
-	static double polynomial(int[] x, int[] f, double point) {
+	static double polynomial(double[] x, double[] f, double point) {
 		double[][] q = dividedDiff(x, f, point);
 		double sum = q[0][0];
 		double factor = 1;
@@ -46,8 +46,8 @@ public class DividedDifferencesMethod {
 		// Station 1
 		System.out.println("Station 1 : ");
 		System.out.println("=======================================================");
-		int[] start1 = new int[] {1, 5, 8, 12, 15, 19, 22, 26, 29};
-		int[] end1 = new int[] {30, 33, 35, 27, 29, 32, 35, 37, 39};
+		double[] start1 = new double[] {1, 5, 8, 12, 15, 19, 22, 26, 29};
+		double[] end1 = new double[] {30, 33, 35, 27, 29, 32, 35, 37, 39};
 		double[][] q1 = dividedDiff(start1, end1, 7);
 		
 		for(int i = 0; i < start1.length; i++) {
@@ -65,8 +65,8 @@ public class DividedDifferencesMethod {
 		System.out.println();
 		System.out.println("Station 2 : ");
 		System.out.println("=======================================================");
-		int[] start2 = new int[] {2, 4, 9, 11, 16, 18, 23, 25, 30};
-		int[] end2 = new int[] {36, 35, 30, 28, 34, 32, 36, 37, 40};
+		double[] start2 = new double[] {2, 4, 9, 11, 16, 18, 23, 25, 30};
+		double[] end2 = new double[] {36, 35, 30, 28, 34, 32, 36, 37, 40};
 		double[][] q2 = dividedDiff(start2, end2, 7);
 		
 		for(int i = 0; i < start2.length; i++) {
@@ -84,8 +84,8 @@ public class DividedDifferencesMethod {
 		System.out.println();
 		System.out.println("Station 3 : ");
 		System.out.println("=======================================================");
-		int[] start3 = new int[] {6, 13, 20, 27};
-		int[] end3 = new int[] {42, 36, 38, 40};
+		double[] start3 = new double[] {6, 13, 20, 27};
+		double[] end3 = new double[] {42, 36, 38, 40};
 		double[][] q3 = dividedDiff(start3, end3, 7);
 		
 		for(int i = 0; i < start3.length; i++) {
@@ -103,8 +103,8 @@ public class DividedDifferencesMethod {
 		System.out.println();
 		System.out.println("Station 4 : ");
 		System.out.println("=======================================================");
-		int[] start4 = new int[] {7, 14, 21, 28};
-		int[] end4 = new int[] {32, 34, 36, 35};
+		double[] start4 = new double[] {7, 14, 21, 28};
+		double[] end4 = new double[] {32, 34, 36, 35};
 		double[][] q4 = dividedDiff(start4, end4, 7);
 		
 		for(int i = 0; i < start4.length; i++) {
@@ -122,8 +122,8 @@ public class DividedDifferencesMethod {
 		System.out.println();
 		System.out.println("Station 5 : ");
 		System.out.println("=======================================================");
-		int[] start5 = new int[] {5, 10, 15, 20};
-		int[] end5 = new int[] {28, 30, 33, 31};
+		double[] start5 = new double[] {5, 10, 15, 20};
+		double[] end5 = new double[] {28, 30, 33, 31};
 		double[][] q5 = dividedDiff(start5, end5, 7);
 		
 		for(int i = 0; i < start5.length; i++) {
@@ -141,8 +141,8 @@ public class DividedDifferencesMethod {
 		System.out.println();
 		System.out.println("Station 6 : ");
 		System.out.println("=======================================================");
-		int[] start6 = new int[] {8, 15, 22, 29};
-		int[] end6 = new int[] {30, 37, 42, 44};
+		double[] start6 = new double[] {8, 15, 22, 29};
+		double[] end6 = new double[] {30, 37, 42, 44};
 		double[][] q6 = dividedDiff(start6, end6, 7);
 		
 		for(int i = 0; i < start6.length; i++) {
@@ -155,5 +155,25 @@ public class DividedDifferencesMethod {
 		double sum6 = polynomial(start6, end6, 7);
 		System.out.print("\nP(x) = ");
 		System.out.println(sum6);
+		
+		
+		System.out.println();
+		System.out.println("Problem 8 : ");
+		System.out.println("=======================================================");
+		double[] start7 = new double[] {-0.2, 0, 0.2};
+		double[] end7 = new double[] {-0.1697, 1, 2.2518};
+		double[][] q7 = dividedDiff(start7, end7, 0.1);
+		
+		for(int i = 0; i < start7.length; i++) {
+			for(int j = 0; j < end7.length; j++) {
+				System.out.printf("%.5f \t", q7[i][j]);
+			} 
+			System.out.println();
+		}
+		
+		double sum7 = polynomial(start7, end7, 0.1);
+		System.out.print("\nP(x) = ");
+		System.out.println(sum7);
+		
 	}
 }
