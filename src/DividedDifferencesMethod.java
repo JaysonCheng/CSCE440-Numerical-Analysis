@@ -148,7 +148,7 @@ public class DividedDifferencesMethod {
 		for(int i = 0; i < start6.length; i++) {
 			for(int j = 0; j < end6.length; j++) {
 				System.out.printf("%.5f \t", q6[i][j]);
-			}
+			} 
 			System.out.println();
 		}
 		
