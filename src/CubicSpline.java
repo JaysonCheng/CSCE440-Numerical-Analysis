@@ -1,9 +1,14 @@
+// Name: Jayson Cheng
+// CSCE440 Assignment 2
 
 public class CubicSpline {
 	
+	// Natural cubic spline method
 	static double[][] naturalCubic(int[] x, double[] f){
 		int size = x.length;
+		// Keep track of the index
 		int n = x.length - 1;
+		
 		double[] h = new double[size];
 		double[] alpha = new double[size];
 		double[] a = new double[size];
@@ -22,10 +27,10 @@ public class CubicSpline {
 		
 		
 		double[] l = new double[size];
-		l[0] = 1;
 		double[] micro = new double [size];
-		micro[0] = 0;
 		double[] z = new double[size];
+		l[0] = 1;
+		micro[0] = 0;
 		z[0] = 0;
 		
 		for(int i = 1; i < n; i++) {
@@ -63,6 +68,7 @@ public class CubicSpline {
 		return result;
 	}
 	
+	// Clamped cubic spline method
 	static double[][] clampedCubic(int[] x, double[] f, double[] fp){
 		int size = x.length;
 		int n = x.length - 1;
@@ -90,10 +96,10 @@ public class CubicSpline {
 		}
 		
 		double[] l = new double[size];
-		l[0] = 2 * h[0];
 		double[] micro = new double [size];
-		micro[0] = 0.5;
 		double[] z = new double[size];
+		l[0] = 2 * h[0];
+		micro[0] = 0.5;
 		z[0] = alpha[0] / l[0];
 		
 		double[] b = new double[size];
@@ -137,7 +143,10 @@ public class CubicSpline {
 		double[][] result = naturalCubic(x,f);
 		
 		System.out.println("\nNatural Cubic Spline Method : ");
-		System.out.println("===============================================");
+		System.out.println("==========================================================");
+		System.out.println("Constant \t x \t\t x^2 \t\t x^3");
+		System.out.println("==========================================================");
+		
 		for(int i = 0; i < x.length - 1; i++) {
 			for(int j = 0; j < f.length - 1; j++) {
 				System.out.printf("%.5f \t", result[i][j]);
@@ -146,7 +155,10 @@ public class CubicSpline {
 		}
 		
 		System.out.println("\nClamped Cubic Spline Method : ");
-		System.out.println("===============================================");
+		System.out.println("==========================================================");
+		System.out.println("Constant \t x \t\t x^2 \t\t x^3");
+		System.out.println("==========================================================");
+		
 		double[][] result1 = clampedCubic(x, f , fp);
 		for(int i = 0; i < x.length - 1; i++) {
 			for(int j = 0; j < f.length - 1; j++) {

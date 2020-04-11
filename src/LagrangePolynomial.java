@@ -26,6 +26,8 @@ public class LagrangePolynomial {
 	}
 	
 	public static void main(String args[]) {
+		System.out.println("Lagrange Polynomial Method : ");
+		System.out.println("=========================================================================");
 		//station 1
 		int[] start1 = new int[] {1, 5, 8, 12, 15, 19, 22, 26, 29};
 		int[] end1 = new int[] {30, 33, 35, 27, 29, 32, 35, 37, 39};

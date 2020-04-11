@@ -175,5 +175,23 @@ public class DividedDifferencesMethod {
 		System.out.print("\nP(x) = ");
 		System.out.println(sum7);
 		
+		System.out.println();
+		System.out.println("Problem 9 : ");
+		System.out.println("=======================================================");
+		double[] start8 = new double[] {-0.2, 0, 0.2};
+		double[] end8 = new double[] {-0.1697, 1, 2.2518};
+		double[][] q8 = dividedDiff(start7, end7, 0.1);
+		
+		for(int i = 0; i < start8.length; i++) {
+			for(int j = 0; j < end8.length; j++) {
+				System.out.printf("%.5f \t", q8[i][j]);
+			} 
+			System.out.println();
+		}
+		
+		double sum8 = polynomial(start8, end8, 0.1);
+		System.out.print("\nP(x) = ");
+		System.out.println(sum8);
+		
 	}
 }
